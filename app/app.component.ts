@@ -5,13 +5,20 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
   template: `
     <div class="app">
-      {{ title }}
+      <div>
+        <button (click)="handleClick(username.value)">
+          Get Value
+        </button>
+        <input type="text" #username>
+        <p>{{ name }}</p>
+      </div>
+
     </div>
   `
 })
 export class AppComponent {
-  title: string;
-  constructor() {
-    this.title = 'Ultimate Angular';
+  name: string = 'Gary';
+  handleClick(value: string) {
+    console.log(value);
   }
 }
